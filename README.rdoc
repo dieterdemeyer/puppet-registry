@@ -1,0 +1,5 @@
+= puppet-registry module
+
+{<img src='https://codex.cegeka.be/jenkins/job/puppet-registry/badge/icon' />}[https://codex.cegeka.be/jenkins/job/puppet-registry/]
+
+This is the registry module.
