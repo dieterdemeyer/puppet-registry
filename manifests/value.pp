@@ -25,7 +25,6 @@
 #
 # == Requires:
 #   - Registry Module
-#   - Stdlib Module
 #
 # == Sample Usage:
 #
@@ -40,9 +39,6 @@
 #   }
 #
 define registry::value($key, $value=undef, $type='string', $data=undef) {
-  # validate our inputs.
-  validate_re($key, '^\w+', "key parameter must not be empty but it is '$key'")
-  validate_re($type, '^\w+', "type parameter must not be empty but it is '$type'")
 
   $value_real = $value ? {
     undef       => $name,
