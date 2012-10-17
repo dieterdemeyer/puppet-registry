@@ -1,19 +1,3 @@
-# = Class: registry_example
-#
-#   This is an example of how to manage registry keys and values.
-#
-# = Parameters
-#
-# = Actions
-#
-# = Requires
-#
-# = Sample Usage
-#
-#     include registry_example
-#
-# (MARKUP: http://links.puppetlabs.com/puppet_manifest_documentation)
-class registry_example {
   registry_key { 'HKLM\Software\Vendor':
     ensure => present,
   }
@@ -83,5 +67,3 @@ class registry_example {
     data   => $some_array,
   }
 }
-
-include registry_example
