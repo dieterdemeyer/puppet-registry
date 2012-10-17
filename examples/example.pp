@@ -66,4 +66,3 @@
     type   => array,
     data   => $some_array,
   }
-}
