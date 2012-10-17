@@ -25,25 +25,25 @@ class registry::compliance_example {
     default: {
       $mode = 'setup'
       notify { 'compliance_example_mode_info':
-        message => "Switch to audit mode using \$env:FACTER_REGISTRY_COMPLIANCE_EXAMPLE_MODE = 'audit'",
+        message => "Switch to audit mode using \${::env}:FACTER_REGISTRY_COMPLIANCE_EXAMPLE_MODE = 'audit'",
         before  => Notify["compliance_example_mode"]
       }
     }
   }
 
   notify { "compliance_example_mode":
-    message => "Registry compliance example mode: ${mode}",
+    message => "Registry compliance example mode: ${::mode}",
   }
 
   # Resource Defaults
   Registry_key {
-    ensure => $mode ? {
+    ensure       => $mode ? {
       setup   => present,
       default => undef
     },
     purge_values => $mode ? {
-      setup   => true,
-      default => false,
+      setup      => true,
+      default    => false,
     },
   }
   Registry_value {

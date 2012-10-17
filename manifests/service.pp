@@ -40,11 +40,11 @@
 #   }
 #
 define registry::service(
-  $ensure       = "UNSET",
-  $display_name = "UNSET",
-  $description  = "UNSET",
-  $command      = "UNSET",
-  $start        = "UNSET"
+  $ensure       = 'UNSET',
+  $display_name = 'UNSET',
+  $description  = 'UNSET',
+  $command      = 'UNSET',
+  $start        = 'UNSET'
 ) {
 
   $ensure_real = $ensure ? {
@@ -87,7 +87,6 @@ define registry::service(
   } else {
     registry_key { $service_key:
       ensure => absent,
-      # REVISIT: purge_values => true,
     }
   }
 
